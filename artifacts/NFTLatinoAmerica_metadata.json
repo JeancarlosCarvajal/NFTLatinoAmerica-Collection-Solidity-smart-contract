@@ -1,0 +1,1296 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "hash_str",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "ctr",
+						"type": "address"
+					}
+				],
+				"name": "NFT_mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "removedAddres",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeApprove",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_minting_price_Gwei",
+						"type": "uint256"
+					}
+				],
+				"name": "Set_price_min_Gwei",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "addressOfOwner",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "allRegistered",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_allRegistered",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "isRegistered",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "register_",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "jsonTokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_artisticName",
+						"type": "string"
+					}
+				],
+				"name": "myAccountByName",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artistAddress",
+						"type": "address"
+					}
+				],
+				"name": "myArtisticName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "artisticName",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nftsFreeMint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nftsFree",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artistAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_artisticName",
+						"type": "string"
+					}
+				],
+				"name": "ownerRegister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pauseMint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pauseRegister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeApproved",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_NFT_pixels",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_resolution",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_colorsAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "safeMint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "see_NFT_canva",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "see_NFT_str",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "see_price_wei",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_minting_price_wei",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_artisticName",
+						"type": "string"
+					}
+				],
+				"name": "selfRegister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newBaseExtension",
+						"type": "string"
+					}
+				],
+				"name": "setBaseExtention",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_new_baseURI",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_imageBaseURI",
+						"type": "string"
+					}
+				],
+				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artistAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_nftsFree",
+						"type": "uint256"
+					}
+				],
+				"name": "setFreeMint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_artistAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_stdo",
+						"type": "bool"
+					}
+				],
+				"name": "setInactiveArtist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startMint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startRegister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stateMint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "switchMint_",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stateRegister",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "switchRegister_",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"NFT_mint(string,uint256,uint256,address)": {
+					"params": {
+						"ctr": "The contract address",
+						"hash_str": "Special hash",
+						"time": "The time",
+						"tokenId": "The token Id"
+					}
+				},
+				"removeApprove(address,uint256)": {
+					"params": {
+						"removedAddres": "The address removed from appoved",
+						"tokenId": "The token Id"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"Set_price_min_Gwei(uint256)": {
+					"params": {
+						"_minting_price_Gwei": "New price in Gwei."
+					}
+				},
+				"addressOfOwner(address)": {
+					"details": "Returns a token array owned by a given address. Mainly for ease for frontend devs.",
+					"params": {
+						"_address": "The address to get the tokens of."
+					}
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC721-approve}."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC721-balanceOf}."
+				},
+				"constructor": {
+					"params": {
+						"_name": "The Collection name given",
+						"_symbol": "The Collection symbol given"
+					}
+				},
+				"getApproved(uint256)": {
+					"details": "See {IERC721-getApproved}."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC721-isApprovedForAll}."
+				},
+				"jsonTokenURI(uint256)": {
+					"params": {
+						"_tokenId": "The token Id"
+					}
+				},
+				"myAccountByName(string)": {
+					"params": {
+						"_artisticName": "The artistic name given"
+					}
+				},
+				"myArtisticName(address)": {
+					"params": {
+						"_artistAddress": "The artistic address given"
+					}
+				},
+				"name()": {
+					"details": "See {IERC721Metadata-name}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"ownerOf(uint256)": {
+					"details": "See {IERC721-ownerOf}."
+				},
+				"ownerRegister(address,string)": {
+					"params": {
+						"_artistAddress": "The artist address",
+						"_artisticName": "The artistic name given "
+					}
+				},
+				"removeApproved(uint256)": {
+					"params": {
+						"_tokenId": "The token Id"
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"safeMint(string,string,string,uint256,uint256)": {
+					"params": {
+						"_NFT_pixels": "The NFTLatinoAmerica special string obtained trought NFTLatinoAmerica.com, if represents the pixels ubication and colors at the same time",
+						"_colorsAmount": "Colors amount used in the NFT",
+						"_description": "NFT description given by the NFT creator",
+						"_name": "NFT name given by the NFT creator",
+						"_resolution": "NFT resolution selected by the creator where the NFT_pixels was performed"
+					}
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"see_NFT_canva(uint256)": {
+					"params": {
+						"_tokenId": "The token Id"
+					}
+				},
+				"see_NFT_str(uint256)": {
+					"params": {
+						"_tokenId": "The token Id"
+					}
+				},
+				"selfRegister(string)": {
+					"params": {
+						"_artisticName": "The artistic name given"
+					}
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC721-setApprovalForAll}."
+				},
+				"setBaseExtention(string)": {
+					"params": {
+						"_newBaseExtension": "The new base extension for all meta data, example .json"
+					}
+				},
+				"setBaseURI(string,string)": {
+					"params": {
+						"_imageBaseURI": "the new base Image Uri example: \"ipfs://hash_img_folder/\"",
+						"_new_baseURI": "The new base uri for all tokens example \"ipfs://hash_data_folder/\""
+					}
+				},
+				"setFreeMint(address,uint256)": {
+					"params": {
+						"_artistAddress": "The artistic address given",
+						"_nftsFree": "NFTs free mint"
+					}
+				},
+				"setInactiveArtist(address,bool)": {
+					"params": {
+						"_artistAddress": "The artistic address given",
+						"_stdo": "The state, false or true"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"symbol()": {
+					"details": "See {IERC721Metadata-symbol}."
+				},
+				"tokenByIndex(uint256)": {
+					"details": "See {IERC721Enumerable-tokenByIndex}."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+				},
+				"tokenURI(uint256)": {
+					"params": {
+						"_tokenId": "The token Id"
+					}
+				},
+				"totalSupply()": {
+					"details": "See {IERC721Enumerable-totalSupply}."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC721-transferFrom}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"NFT_mint(string,uint256,uint256,address)": {
+					"notice": "Emits an event when a token is mint"
+				},
+				"removeApprove(address,uint256)": {
+					"notice": "Emits an event when an appoval is removed"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"Set_price_min_Gwei(uint256)": {
+					"notice": "Configure the NFT minting price "
+				},
+				"constructor": {
+					"notice": "construct the name and the symbol of the NFTLatinoAmerica colection"
+				},
+				"isRegistered(address)": {
+					"notice": "Ask if an account is registered"
+				},
+				"jsonTokenURI(uint256)": {
+					"notice": "Returns all the NFT information as a Json format, where include the 'img' whish is the canvas and javascript code to reconstruct the NFT using a HTML or PHP empty file and open it in a browser"
+				},
+				"myAccountByName(string)": {
+					"notice": "Returns the artistic name of an account"
+				},
+				"myArtisticName(address)": {
+					"notice": "Returns the artistic name of an account"
+				},
+				"nftsFreeMint()": {
+					"notice": "Returns free mint tokens quantity of an account"
+				},
+				"ownerRegister(address,string)": {
+					"notice": "Only Owner will Register a new crypto Artist, this in case of filter only address verified avoiding the spam"
+				},
+				"pauseMint()": {
+					"notice": "Pause minting"
+				},
+				"pauseRegister()": {
+					"notice": "Pause Registering"
+				},
+				"removeApproved(uint256)": {
+					"notice": "Delete the last address approved and reset it to zero address as the default"
+				},
+				"safeMint(string,string,string,uint256,uint256)": {
+					"notice": "Mint a single NFT"
+				},
+				"see_NFT_canva(uint256)": {
+					"notice": "Returns the canvas and javascript code in order to recreate the NFT in case of lose the main domain. introduce the code into a HTML or PHP empty file and open it in a browser or server and show the NFT image"
+				},
+				"see_NFT_str(uint256)": {
+					"notice": "Returns the NFTLatinoAmerica special codification string in order to be decoded by NFTLatinoAmerica.com and show the NFT as a canva image"
+				},
+				"see_price_wei()": {
+					"notice": "See price NFT minting in wei"
+				},
+				"selfRegister(string)": {
+					"notice": "Self Register"
+				},
+				"setBaseExtention(string)": {
+					"notice": "Sets all base extension for metadata"
+				},
+				"setBaseURI(string,string)": {
+					"notice": "Sets the base URI if any change happens with the main domain, just the collection owner could modify it            Warning the Minting has to be Paused mean while this process is updating"
+				},
+				"setFreeMint(address,uint256)": {
+					"notice": "Sets free mint tokens to any artist that deserves it"
+				},
+				"setInactiveArtist(address,bool)": {
+					"notice": "Self inactive to any artist that create span"
+				},
+				"startMint()": {
+					"notice": "Start minting"
+				},
+				"startRegister()": {
+					"notice": "Start Registering"
+				},
+				"stateMint()": {
+					"notice": "View the minting state"
+				},
+				"stateRegister()": {
+					"notice": "View the register state"
+				},
+				"tokenURI(uint256)": {
+					"notice": "Returns all the NFT information as a Json format, where include the 'img' whish is the canvas and javascript code to reconstruct the NFT using a HTML or PHP empty file and open it in a browser"
+				}
+			},
+			"notice": "Using solidity 0.8.0 is not allowed notice on private elements, just regular coments we had to use.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"NFTLatinoAmerica.sol": "NFTLatinoAmerica"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Address.sol": {
+			"keccak256": "0x3336baae5cf23e94274d75336e2d412193be508504aee185e61dc7d58cd05c8a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://39a05eec7083dfa0cc7e0cbfe6cd1bd085a340af1ede93fdff3ad047c5fb3d8e",
+				"dweb:/ipfs/QmVApz5fCUq2QC8gKTsNNdCmcedJ3ETHp68zR5N3WUKS4r"
+			]
+		},
+		"Context.sol": {
+			"keccak256": "0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c",
+				"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux"
+			]
+		},
+		"ERC165.sol": {
+			"keccak256": "0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549",
+				"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn"
+			]
+		},
+		"ERC721.sol": {
+			"keccak256": "0x58040074dc12198293b63d14598b33d81125f961d340672114397a3ef09d08c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6bc8b35392e5d17c92dd6aa6ed165c6885ccf6e360a9dcb76641e716360039f8",
+				"dweb:/ipfs/Qma7ckuuSuDDSknhimmeGjnx7q1U7zfRBaiqRDhz3isNSv"
+			]
+		},
+		"ERC721Enumerable.sol": {
+			"keccak256": "0xe565eab6b9ec1ff059c37a0986440895e639b7eb65b2fa609aefa6c72def816e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://44861e2c2dd8f6e461aa0ff8049ebeaf8f1fdf484330dd11dceed20b9195178e",
+				"dweb:/ipfs/QmX9pUPEuPEHxjjuHumUhmbWfTK172FUcN6VncoohpgvZC"
+			]
+		},
+		"ERC721URIStorage.sol": {
+			"keccak256": "0xbef6f11410511b1ea0c82ae43cc5f2b47c91d39007d8253b2f122a703ae357f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0630d786f7a22e47a4cd418bd863abcafb6cfbfb6cf1203d4596930623bfa0bf",
+				"dweb:/ipfs/QmTypkdE5cXL2u7eP62BP2uwoXgXYLzc5QYLazTSSjLWgD"
+			]
+		},
+		"IERC165.sol": {
+			"keccak256": "0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6",
+				"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx"
+			]
+		},
+		"IERC721.sol": {
+			"keccak256": "0xe0e811a90fa8c9179bb9b44606f477f6c3a2243708ddeaa9156cc3ae8004239c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://442efef5eea5e2e0cd21be0a8ca68fa296e5759ae9acdeeb62c1a6a0e762f799",
+				"dweb:/ipfs/QmTXP4rpJBHSwMrjyhXUEqv8UQ8YiLuemSzhS6XpR3SWNz"
+			]
+		},
+		"IERC721Enumerable.sol": {
+			"keccak256": "0x0f305db2181bd0b827dcda2fd9de54b2bf7658de33fd15784884f83a2f7842aa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d558289a2991dafe5639eb340090d89fb947abd84042226403288f0d111991c0",
+				"dweb:/ipfs/QmWwRjZV9LZRPMSVRqcL8xHWwSH87sR9TVnpYLbdB6Fehe"
+			]
+		},
+		"IERC721Metadata.sol": {
+			"keccak256": "0x0c3ee58edf8b8c487c4333710a2404b78a84230d10e1432c75998e3d8dcb9048",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c26bbf3e3e32b3ce219ebaa746a5788b38524f58b54f8665fe75c7ce9b77c230",
+				"dweb:/ipfs/QmWFmd8de26oUgr6X2Zqt4b5bi7P7vwCPyVT8ECZj5tgDb"
+			]
+		},
+		"IERC721Receiver.sol": {
+			"keccak256": "0xd9517254724276e2e8de3769183c1f738f445f0095c26fd9b86d3c6687e887b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e604bcdcd5e5b2fb299ad09769cde6db19d5aa1929d1b5e939234a0f10d7eb8",
+				"dweb:/ipfs/Qmd8hXE3GZfBHuWx3RNiYgFW2ci7KvHtib8DiwzJ2dgo9V"
+			]
+		},
+		"NFTLatinoAmerica.sol": {
+			"keccak256": "0x435677d0bfd708b2c9be7fdd952d6996e4c65e7f7633008b0a09486592fadee1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://edec37151ee8e4827d1d8ef2f596d8b03fca2b1cb3f70d945c4d47b205245ecc",
+				"dweb:/ipfs/QmSFSnLYFGfyNEBnaeTpC54tFof9kWU9zTE6LnZRPACdNz"
+			]
+		},
+		"Ownable.sol": {
+			"keccak256": "0x75d1e6250c190ca0500e5a2b7def5e5d6fd3edbe368a6de93dea256471d04593",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09b8acacbbc0353985940f90022a8e15d15d9767e1eeaa721e1e21655c34c62e",
+				"dweb:/ipfs/Qmeb2CejPutKdfNpncsRny8cibhF7aVMJpR6ZvMYruDWLM"
+			]
+		},
+		"SafeMath.sol": {
+			"keccak256": "0xb4978d0030a3586e9df254340fdaeb6feafd04f2f0c25058e71b573bda9012ce",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://03544bd906446e796a53bb20182510e05916971db0943d43371a1da2f9375813",
+				"dweb:/ipfs/QmXDscVEBmzasfLt6azg8zksXRuzEE2XfEyuuUPP4NiK4X"
+			]
+		},
+		"Strings.sol": {
+			"keccak256": "0x391d3ba97ab6856a16b225d6ee29617ad15ff00db70f3b4df1ab5ea33aa47c9d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d636ba90bbbeed04a1ea7fe9ec2466757e30fd38ba2ca173636dbf69a518735e",
+				"dweb:/ipfs/QmQwCB2BHnEuYR22PYt9HkpbgeFDhq4rHmaYqAZbX3WRC7"
+			]
+		}
+	},
+	"version": 1
+}
